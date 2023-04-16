@@ -51,34 +51,7 @@ const selectors = {
     }
   
     const albums = ["👱🏻‍♀️","💅","🐍","🌲","🌑","🌈","🔮","💔","🔴","🔊"]
-
-    // const albums = [
-    //     "./albums/Folklore.png",
-    //     "./albums/Midnights.png",
-    //     "./albums/Self-Titled.png",
-    //     "./albums/1989.png",
-    //     "./albums/Red.png",
-    //     "./albums/Evermore.png",
-    //     "./albums/Reputation.png",
-    //     "./albums/Lover.png",
-    //     "./albums/Fearless.png",
-    //     "./albums/Speak-Now.png"
-    // ]
-
-    // const albums = [
-    //     { name: "Folklore", imgSrc: "./albums/Folklore.png"},
-    //     { name: "Midnights", imgSrc: "./albums/Midnights.png"},
-    //     { name: "TaylorSwift", imgSrc: "./albums/Self-Titled.png"},
-    //     { name: "1989", imgSrc: "./albums/1989.png"},
-    //     { name: "Red", imgSrc: "./albums/Red.png"},
-    //     { name: "Evermore", imgSrc: "./albums/Evermore.png"},
-    //     { name: "Reputation", imgSrc: "./albums/Reputation.png"},
-    //     { name: "Lover", imgSrc: "./albums/Lover.png"},
-    //     { name: "Fearless", imgSrc: "./albums/Fearless.png"},
-    //     { name: "SpeakNow", imgSrc: "./albums/Speak-Now.png"}
-    // ]
-
-  
+ 
     const picks = pickRandom(albums, (dimensions * dimensions) / 2) 
     const items = shuffle([...picks, ...picks])
     const cards = `
@@ -141,7 +114,6 @@ const selectors = {
         }, 1000)
     }
   
-    // If there are no more cards that we can flip, we won the game
     if (!document.querySelectorAll('.card:not(.flipped)').length) {
         setTimeout(() => {
             selectors.boardContainer.classList.add('flipped')
