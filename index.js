@@ -50,20 +50,34 @@ const selectors = {
         throw new Error("The dimension of the board must be an even number.")
     }
   
-    const albums = [, '🍒', '🥑', '🌽', '🥕', '🍇', '🍉', '🍌', '🥭', '🍍']
-    
-    // const getData = () => {
-    //   (name: 'Folklore', img: 'albums/Folklore.jpeg')
-    //   (imgSrc: ./albums/Evermore.jpeg, name: 'Evermore')
-    //   (imgSrc: ./albums/Red.webp, name: 'Red')
-    //   (imgSrc: ./albums/1989.webp, name: '1989')
-    //   (imgSrc: ./albums/Midnights.webp, name: 'Midnights')
-    //   (imgSrc: ./albums/Speak-Now.webp, name: 'SpeakNow')
-    //   (imgSrc: ./albums/Fearless.webp, name: 'Fearless')
-    //   (imgSrc: ./albums/Lover.webp, name: 'Lover')
-    //   (imgSrc: ./albums/Reputation.jpeg, name: 'Reputation')
-    //   (imgSrc: ./albums/Self-Titled.jpeg, name: 'TaylorSwift')
-    // }
+    const albums = ["👱🏻‍♀️","💅","🐍","🌲","🌑","🌈","🔮","💔","🔴","🔊"]
+
+    // const albums = [
+    //     "./albums/Folklore.png",
+    //     "./albums/Midnights.png",
+    //     "./albums/Self-Titled.png",
+    //     "./albums/1989.png",
+    //     "./albums/Red.png",
+    //     "./albums/Evermore.png",
+    //     "./albums/Reputation.png",
+    //     "./albums/Lover.png",
+    //     "./albums/Fearless.png",
+    //     "./albums/Speak-Now.png"
+    // ]
+
+    // const albums = [
+    //     { name: "Folklore", imgSrc: "./albums/Folklore.png"},
+    //     { name: "Midnights", imgSrc: "./albums/Midnights.png"},
+    //     { name: "TaylorSwift", imgSrc: "./albums/Self-Titled.png"},
+    //     { name: "1989", imgSrc: "./albums/1989.png"},
+    //     { name: "Red", imgSrc: "./albums/Red.png"},
+    //     { name: "Evermore", imgSrc: "./albums/Evermore.png"},
+    //     { name: "Reputation", imgSrc: "./albums/Reputation.png"},
+    //     { name: "Lover", imgSrc: "./albums/Lover.png"},
+    //     { name: "Fearless", imgSrc: "./albums/Fearless.png"},
+    //     { name: "SpeakNow", imgSrc: "./albums/Speak-Now.png"}
+    // ]
+
   
     const picks = pickRandom(albums, (dimensions * dimensions) / 2) 
     const items = shuffle([...picks, ...picks])
@@ -77,7 +91,6 @@ const selectors = {
             `).join('')}
        </div>
     `
-    
     const parser = new DOMParser().parseFromString(cards, 'text/html')
   
     selectors.board.replaceWith(parser.querySelector('.board'))
