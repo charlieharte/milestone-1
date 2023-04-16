@@ -126,7 +126,7 @@ const selectors = {
     if (state.flippedCards === 2) {
         const flippedCards = document.querySelectorAll('.flipped:not(.matched)')
   
-        if (flippedCards[0].innerText === flippedCards[1].innerText) {
+        if (flippedCards[0].innerHTML === flippedCards[1].innerHTML) {
             flippedCards[0].classList.add('matched')
             flippedCards[1].classList.add('matched')
         }
