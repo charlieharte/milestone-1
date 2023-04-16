@@ -11,7 +11,6 @@ const selectors = {
     gameStarted: false,
     flippedCards: 0,
     totalFlips: 0,
-    totalTime: 0,
     loop: null
   }
   
@@ -50,7 +49,33 @@ const selectors = {
         throw new Error("The dimension of the board must be an even number.")
     }
   
-    const albums = ["👱🏻‍♀️","💅","🐍","🌲","🌑","🌈","🔮","💔","🔴","🔊"]
+    // const albums = ["👱🏻‍♀️","💅","🐍","🌲","🌑","🌈","🔮","💔","🔴","🔊"]
+
+    const albums = [
+        ("./albums/Folklore.png"),
+        ("./albums/Midnights.png"),
+        ("./albums/Self-Titled.png"),
+        ("./albums/1989.png"),
+        ("./albums/Red.png"),
+        ("./albums/Evermore.png"),
+        ("./albums/Reputation.png"),
+        ("./albums/Lover.png"),
+        ("./albums/Fearless.png"),
+        ("./albums/Speak-Now.png")
+    ]
+    
+    // const albums = [
+    //     { name: "Folklore", imgSrc: "./albums/Folklore.png"},
+    //     { name: "Midnights", imgSrc: "./albums/Midnights.png"},
+    //     { name: "TaylorSwift", imgSrc: "./albums/Self-Titled.png"},
+    //     { name: "1989", imgSrc: "./albums/1989.png"},
+    //     { name: "Red", imgSrc: "./albums/Red.png"},
+    //     { name: "Evermore", imgSrc: "./albums/Evermore.png"},
+    //     { name: "Reputation", imgSrc: "./albums/Reputation.png"},
+    //     { name: "Lover", imgSrc: "./albums/Lover.png"},
+    //     { name: "Fearless", imgSrc: "./albums/Fearless.png"},
+    //     { name: "SpeakNow", imgSrc: "./albums/Speak-Now.png"}
+    // ]
  
     const picks = pickRandom(albums, (dimensions * dimensions) / 2) 
     const items = shuffle([...picks, ...picks])
@@ -59,7 +84,7 @@ const selectors = {
             ${items.map(item => `
                 <div class="card">
                     <div class="card-front"></div>
-                    <div class="card-back">${item}</div>
+                    <div class="card-back"><img class="album-image" src="${item}" alt="${item}" width="112" height="112"></div>
                 </div>
             `).join('')}
        </div>
@@ -74,11 +99,8 @@ const selectors = {
     selectors.start.classList.add('disabled')
   
     state.loop = setInterval(() => {
-        state.totalTime++
-  
-        selectors.moves.innerText = `${state.totalFlips} moves`
-        
-    }, 1000)
+          selectors.moves.innerText = `${state.totalFlips} moves`
+        }, 1000)
   }
   
   const flipBackCards = () => {
@@ -121,10 +143,8 @@ const selectors = {
                 <span class="win-text">
                     You won!<br />
                     with <span class="highlight">${state.totalFlips}</span> moves<br />
-                    under <span class="highlight">${state.totalTime}</span> seconds
                 </span>
             `
-  
             clearInterval(state.loop)
         }, 1000)
     }

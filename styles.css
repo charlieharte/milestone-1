@@ -21,22 +21,21 @@ html {
 
 button {
   background: #383b52;
-  color: #FFF;
+  color: rgb(245, 245, 245);
   border-radius: 1em;
   padding: 1em 2em;
   border: 0;
   cursor: pointer;
-  font-family: Fredoka;
   font-size: 18pt;
 }
 
 .disabled {
-  color: #757575;
+  color: #707070;
 }
 
 .stats {
-  color: #FFF;
-  font-size: 14pt;
+  color: #ffffff;
+  font-size: 20pt;
 }
 
 .board-container {
@@ -45,10 +44,10 @@ button {
 
 .board,
 .win {
-  border-radius: .5em;
+  border-radius: 1em;
   box-shadow: 0 2em 4em rgb(33 33 33 / 25%);
   background: radial-gradient(#bee7f9 0%,#853745 33%,#f6ce91 67%, #ceb5d2);
-  transition: transform .6s cubic-bezier(0.4, 0.0, 0.2, 1);
+  transition: transform .5s cubic-bezier(0.4, 0.0, 0.2, 1);
   backface-visibility: hidden;
 }
 
@@ -81,7 +80,7 @@ button {
   width: 100%;
   height: 100%;
   background: #282A3A;
-  transition: transform .6s cubic-bezier(0.4, 0.0, 0.2, 1);
+  transition: transform .5s cubic-bezier(0.4, 0.0, 0.2, 1);
   backface-visibility: hidden;
 }
 
@@ -90,7 +89,7 @@ button {
   font-size: 28pt;
   user-select: none;
   text-align: center;
-  line-height: 3em;
+  line-height: 3.5em;
   background: #FDF8E6;
 }
 
@@ -100,6 +99,10 @@ button {
 
 .card.flipped .card-back {
   transform: rotateY(0) rotateZ(0);
+}
+
+.album-image{
+  border-radius: 10px;
 }
 
 .win {
