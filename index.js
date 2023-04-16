@@ -49,8 +49,6 @@ const selectors = {
         throw new Error("The dimension of the board must be an even number.")
     }
   
-    // const albums = ["👱🏻‍♀️","💅","🐍","🌲","🌑","🌈","🔮","💔","🔴","🔊"]
-
     const albums = [
         ("./albums/Folklore.png"),
         ("./albums/Midnights.png"),
@@ -64,19 +62,6 @@ const selectors = {
         ("./albums/Speak-Now.png")
     ]
     
-    // const albums = [
-    //     { name: "Folklore", imgSrc: "./albums/Folklore.png"},
-    //     { name: "Midnights", imgSrc: "./albums/Midnights.png"},
-    //     { name: "TaylorSwift", imgSrc: "./albums/Self-Titled.png"},
-    //     { name: "1989", imgSrc: "./albums/1989.png"},
-    //     { name: "Red", imgSrc: "./albums/Red.png"},
-    //     { name: "Evermore", imgSrc: "./albums/Evermore.png"},
-    //     { name: "Reputation", imgSrc: "./albums/Reputation.png"},
-    //     { name: "Lover", imgSrc: "./albums/Lover.png"},
-    //     { name: "Fearless", imgSrc: "./albums/Fearless.png"},
-    //     { name: "SpeakNow", imgSrc: "./albums/Speak-Now.png"}
-    // ]
- 
     const picks = pickRandom(albums, (dimensions * dimensions) / 2) 
     const items = shuffle([...picks, ...picks])
     const cards = `
