@@ -27,6 +27,7 @@ button {
   border: 0;
   cursor: pointer;
   font-size: 18pt;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .disabled {
@@ -34,8 +35,13 @@ button {
 }
 
 .stats {
-  color: #ffffff;
-  font-size: 20pt;
+  background: #383b52;
+  color: rgb(245, 245, 245);
+  border-radius: 1em;
+  padding: 1em 2em;
+  border: 0;
+  font-size: 18pt;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .board-container {
